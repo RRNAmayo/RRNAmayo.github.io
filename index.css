@@ -9,10 +9,11 @@ a{
 }
 body{
 	width: 100%;
+	background-color: #E8DCCE
 }
 .part-head{
 	padding-left: 10px;
-	background-color: #97262A;
+	background-color:#f39d93;
 	border-radius: 5px;
 	margin-bottom: 10px;
 	height: 40px;
@@ -28,7 +29,7 @@ body{
 .head{
 	width: 100%;
 	height: 150px;
-	background-color:#80C4AC; 
+	background-color:#B1C4CB;
 }
 .head-content{
 	width: 1000px;
@@ -64,13 +65,15 @@ body{
 .part1{
 	width: 1000px;
 	height: 350px;
-	background-color:#E1D2B5;
+	background-color:#F0E9E1;
 }
 .content1{
 	width: 240px;
 	margin-left: 70px;
-	height: 300px;
+	height: 240px;
 	float: left;
+	border-radius: 50%;
+	border:5px solid white;
 }
 .content1 img{
 	width: 240px;
@@ -80,17 +83,17 @@ body{
 .content1 div{
 	font-size: 20px;
 	text-align: center;
-	color: black;
+	color: #5d3f1b;
 	width: 240px;
 	height: 60px;
 	line-height: 60px;
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 /*第二部分 作品简介*/
 .part2{
 	width: 1000px;
 	height: 940px;
-	background-color: #B7D4DC;
+	background-color: #E2EDF2;
 	padding-bottom: 10px;
 }
 .content2{
@@ -103,14 +106,16 @@ body{
 	line-height: 40px;
 	font-size: 20px;
 	font-weight: bold;
+	color:#516068;
 }
 .content2-text{
 	line-height: 30px;
 	font-size: 18px;
+	color:#516068;
 	margin-left: 15px;
 	text-indent: 15px;
 	margin-right: 20px;
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 .images{
 	padding: 20px 0;
@@ -126,7 +131,7 @@ body{
 .part3{
 	width: 100%;
 	height: 100px;
-	background-color:#2A2017; 
+	background-color:#665B52;
 	color: white;
 }
 .footer{
@@ -138,8 +143,8 @@ body{
 .footer div{
 	color: white;
 	padding-left: 150px;
-	font-size: 20px;
-	font-weight: bold;
+	font-size: 15px;
+	/*font-weight: bold;*/
 	height:30px;
 	line-height: 50px;
 }
