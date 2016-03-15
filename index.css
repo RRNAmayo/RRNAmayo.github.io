@@ -36,9 +36,11 @@ body{
 }
 /*左侧团队标志*/
 .head-left{
-	width: 500px;
-	height:150px;
+	width: 480px;
+	/*height:150px;*/
 	float: left;
+	padding-top: 15px;
+	padding-left: 20px;
 }
 .head-left img{
 
