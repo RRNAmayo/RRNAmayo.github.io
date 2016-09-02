@@ -1,63 +1,150 @@
-<!doctype>
-<html>
-<head>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="index.css">
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/profile.css" rel="stylesheet">
+		<title>笔记整理</title>
+	</head>
+	<body>
+		<nav id="top_nav" class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		    	<a class="navbar-brand" href="#">
+		        <img alt="CMJ" src="img/CMJ_20.png">
+		        <!-- <span>知识结构整理</span> -->
+		      </a>
+		      <a class="navbar-brand" href="#">
+		        <span>笔记整理</span>
+		      </a>
+		    </div>
+		
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li><a href="internet.html">计算机网络</a></li>
+		        <li><a href="data_structure.html">数据结构</a></li>
+		        <li><a href="os.html">操作系统</a></li>
+		        <li><a href="db.html">数据库</a></li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">web前端 <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">HTML</a></li>
+		            <li><a href="#">CSS</a></li>
+		            <li><a href="#">JavaScript</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">highcharts</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">codeignitor</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      
+		      <ul class="nav navbar-nav navbar-right">
+		        <li class="active"><a href="index.html" ><span class="glyphicon glyphicon-user"></span>个人简历</a></li>
+		        <li><a href="paintings.html"><span class="glyphicon glyphicon-picture"></span>绘画作品</a></li>
+		        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span>与我联系</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+		
+		<aside id="aside">
+			<img id="portrait" class="img-circle" src="img/CMJ_180.png"/>
+			<p style="color:#aaa">“创造价值，超越自我”</p>
+			<div id="intro">
+				<h3>蔡梦娇</h3>
+				<br /><br />
+				<h4>求职意向：Web前端开发</h4>
+			</div>
+		</aside>
+		<article id="article">
+			<section>
+				<img id="photo" src="img/photo.bmp" />
+				<div id="education" class="panel panel-warning">
+				  <div class="panel-heading">教育背景</div>
+				  <div class="panel-body">
+				  	<table style="width: 100%">
+				  		<tr>
+				  			<td>硕士</td><td>西安电子科技大学</td><td>计算机学院</td><td>教育技术学</td><td>2014.9至今</td>
+				  		</tr>
+				  		<tr>
+				  			<td>本科</td><td>西安电子科技大学</td><td>计算机学院</td><td>计算机科学与技术</td><td>2010.9~2014.6</td>
+				  		</tr>
+				  	</table>
 
-	<div class="head">
-		<div class="head-content">
-			<div class="head-left">
-				<img src="logo.png"/>
-			</div>
-			<div class="head-right">
-				<a href="#part1">团队介绍</a>
-				<a href="#part2">作品简介</a>
-				<a href="#part3">联系我们</a>
-			</div>
-		</div>
-	</div>
-	<div class="part1">
-		<div class="part-head"><a name="part1">团队介绍</a></div>
-		<div class="content1">
-			<img src="cmj.png"/>
-			<div>蔡梦娇</div>
-		</div>
-		<div class="content1">
-			<img src="BR.png"/>
-			<div>别芮</div>
-		</div>
-		<div class="content1">
-			<img src="LJJ.png"/>
-			<div>李景杰</div>
-		</div>
-	</div>
-	<div class="part2">
-		<div class="part-head"><a name="part2">作品简介</a></div>
-		<div class="content2">
-			<div class="content2-head">1.气象信息服务系统</div>
-			<div class="content2-text">气象信息服务系统实现了对各种气象数据的显示，包括天气预报、预警信息，雷达回波图的动态播放，高空、地面数据的可视化显示，以及天气预报的制作，并允许用户反馈信息。</div>
-			<div class="images">
-				<img src="weather1.png"/>
-				<img src="weather2.png"/>
-			</div>
-		</div>
-		<div class="content2">
-			<div class="content2-head">2.“农掌门”惠农服务系统</div>
-			<div class="content2-text">农掌门系统围绕互联网+农业的思想而设计，网站囊括了各类农业信息，帮助用户学习农产品的种植、养殖技术，使农民与农业专家可以进行实时交流。</div>
-			<div class="images">
-				<img src="agri1.png"/>
-				<img src="agri2.png"/>
-			</div>
-		</div>
-	</div>
-	<div class="part3">
-		<div class="footer">
-			<a name="part3"></a>
-			<div>地址：陕西省西安市雁塔区太白南路二号西安电子科技大学</div>
-			<div>邮编：710071</div>
-		</div>
-	</div>
-</body>
+				  </div>
+				</div>
+				
+				<div class="panel panel-warning">
+				  <div class="panel-heading">项目经验</div>
+				  <div class="panel-body">
+				   <!-- <p><strong>项目名称:&nbsp;&nbsp;</strong><span>气象系统信息化建设</span></p>
+				   <p><strong>开发时间:&nbsp;&nbsp;</strong><span>2015.3~至今</span></p>
+				   <p><strong>项目描述:&nbsp;&nbsp;</strong><span>基于mvc设计模式的ci框架的B/S系统，分为数据传输、资料显示、预报制作发布、 
+				   	预报质量评估、业务管理等多个模块。利用highcharts数据可视化技术和ajax异步 更新技术，实现气象信息数据的实时更新和图形化显示，如天气实况显示、
+				   	数值预报资料显示、卫星云图播放、历史资料查询统计等。</span></p> -->
+				   	<table>
+				   		<tr><td class="title">项目名称:</td><td>气象系统信息化建设</td></tr>
+				   		<tr><td class="title">开发时间:</td><td>2015.3~至今</td></tr>
+				   		<tr>
+				   			<td class="title">项目描述:</td>
+				   			<td>气象信息服务系统是基于codeigniter框架的B/S系统，后台使用php开发，分为数据传输、资料显示、预报制作发布、 预报质
+		量评估、业务管理等多个模块。利用highcharts数据可视化技术和ajax异步 更新技术，实
+		现气象信息数据的实时更新和图形化显示，如天气实况显示、数值预报资料显示、卫星云
+		图播放、历史资料查询统计等。</td>
+				   		</tr>
+				   		<tr><td class="title">责任描述:</td><td>主要负责资料显示模块、业务管理模块，以及系统前端设计与开发。</td></tr>
+				   	</table>
+				   	<img style="width: 24%" src="img/projest/qx1.png" />
+				   	<img style="width: 24%" src="img/projest/qx2.png" />
+				   	<img style="width: 24%" src="img/projest/qx3.png" />
+				   	<img style="width: 24%" src="img/projest/qx4.png" />
+				   	
+				  </div>
+				</div>
+				<div id="skill" class="panel panel-warning">
+				  <div class="panel-heading">专业技能</div>
+				  <div class="panel-body">
+					<ul>
+						<li>熟练掌握c/c++编程语言</li>
+						<li>熟练掌握HTML，CSS，JS，JQuery等</li>
+						<li>熟练掌握bootstrap，highchart,及CodeIgniter开发框架等</li>
+						<li>熟悉掌握PS，AI，flash， SAI等绘图软件</li>
+						<li>通过英语四、六级，通过日语N2</li>
+					</ul>
+				  </div>
+				</div>
+				
+				<div id="honors" class="panel panel-warning">
+				  <div class="panel-heading">在校荣誉</div>
+				  <div class="panel-body">
+					<ul>
+						<li>2014~2015  一等学业奖学金</li>
+						<li>2014~2015 腾讯MiniGame创意大赛优秀奖</li>
+						<li>2013~2014 获得“优秀毕业生”称号</li>
+						<li>2011~2012 学校二等奖学金</li>
+						<li>2010~2011 阳光体育三级运动员</li>
+					</ul>
+				  </div>
+				</div>
+				
+				<div id="hobbies" class="panel panel-warning">
+				  <div class="panel-heading">爱好特长</div>
+				  <div class="panel-body">
+					 <p>擅长绘画，设计和外语学习。通过英语4、6级考试以及日语N2试验。</p> 
+					 <p>担任校宣传部副部长，负责海报制作等。</p>
+					  <p>绘画作品博客：http://linqiaoxi.lofter.com</p>
+				  </div>
+				</div>
+
+			</section>
+		</article>
+		<script src="js/jquery-1.11.2.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
 </html>
