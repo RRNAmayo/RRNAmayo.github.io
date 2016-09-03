@@ -4,6 +4,7 @@ html{
 }
 body{
 	margin:0;
+	position:relative;
 	background-color:#EDEDEF;
 	height:100%
 }
@@ -11,7 +12,7 @@ body{
 	margin:0;
 	width: 100%;
 	position:fixed;
-	z-index: 9;
+	z-index: 2;
 }
 #aside{
 	/*min-width:200px;*/
@@ -28,7 +29,6 @@ body{
 	float:right;
 	width:82%;
 	padding:80px 100px;
-	height: 800px;
 }
 #contents{
 	margin:0;
