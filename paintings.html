@@ -252,7 +252,7 @@
 		<script>
 			$(function(){
 				var filename;
-				$(".artwork").click(function()
+				$(".artwork").dblclick(function()
 				{
 					filename = $(this).attr("src");
 					filename = filename.substring(filename.lastIndexOf("/"));
@@ -268,7 +268,7 @@
 					$("html").css("overflow-y","auto");
 				});
 				$(".big").click(function(){
-					$(this).parent().siblings(".artwork").click();
+					$(this).parent().siblings(".artwork").dblclick();
 				});
 				$(".info").click(function(){
 					$("#information").show();
