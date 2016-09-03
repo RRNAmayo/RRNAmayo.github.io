@@ -1,6 +1,11 @@
 #article{
 	padding:80px 80px;
 }
+#portrait{
+	margin:100px auto;
+	margin-bottom:30px;
+	border:3px solid #b7a394;
+}
 .thumbnail{
 	box-shadow: 3px 3px 3px #ccc;
 }
@@ -22,6 +27,8 @@
 }
 #aside{
 	background-image:url(../img/bg.jpg);
+	text-align:center;
+	padding:100px 20px;
 }
 #show{
 	margin:auto;
@@ -29,4 +36,37 @@
 	max-height:100%;
 	max-width: 100%;
 }
-
+.intro{
+	display:none;
+}
+.glyphicon-remove:hover{
+	background-color:#DE5955;
+}
+#information{
+	width:300px;
+	height:200px;
+	border-radius:5px;
+	color:white;
+	background-color: black;
+	padding:0 10px;
+	position:fixed;
+	margin:auto;
+	opacity:0.9;
+	filter: alpha(opacity=90);  
+	top: 0; left: 0; bottom: 0; right: 0; 
+	display:none;
+}
+#info-text{
+	/*padding:30px;*/
+	height:200px;
+	line-height:200px;
+	text-align:center;
+	vertical-align:middle;
+}
+#aside-text{
+	text-indent:50px;
+	line-height:200%;
+	/*font-style:italic;*/
+	font-size:20px;
+	color:#8F6A33;
+}
