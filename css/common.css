@@ -5,9 +5,11 @@ html{
 body{
 	margin:0;
 	position:relative;
-	background-color:#EDEDEF;
+	background-image:url(../img/bodybg.png);
 	height:100%
 }
+
+
 #top_nav{
 	margin:0;
 	width: 100%;
@@ -36,11 +38,25 @@ body{
 section{
 	margin:50px 0;
 }
-pre{
+.pre{
+	background-color: #F8F8F8;
 	border:0;
 	padding:50px 100px;
-	background-color:#f8f8f8;
 	box-shadow: 2px 2px 2px #ccc;
 	line-height:35px;
+	font-family: "simsun";
 	font-size:14px;
+}
+pre{
+	border:0;
+	background-color: #F8F8F8;
+	line-height:150%;
+	font-size:14px;
+	padding: 0 20px;
+}
+.code{
+	display: inline-block;
+	padding:10px 30px;
+	background-color:#f0dfcf;
+	color:#9c6b41;
 }
