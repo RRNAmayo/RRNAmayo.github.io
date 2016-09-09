@@ -57,7 +57,7 @@
 			  <a href="#closure"    class="list-group-item">js闭包</a>
 			  <a href="#ajax"    class="list-group-item">AJAX</a>
 			  <a href="#jqueryajax"    class="list-group-item">JQuery AJAX</a>
-			  <a href="#"    class="list-group-item">	交换机、路由器、网关的概念</a>
+			  <a href="#inherit"    class="list-group-item">js继承</a>
 			</div>
 		</aside>
 		<article id="article">
@@ -167,7 +167,7 @@ $("button").click(function(){
 	});
 });
 </pre>				
-					<h3>$.getJson()方法</h3>
+					<h3>$.getJSON()方法</h3>
 					<pre class="code">$.getJSON(url,data,funciton(data,status,xhr))</pre>
 <pre class="code">
 $("#btn1").click(function(){
@@ -206,7 +206,87 @@ $("button").click(function(){
 				</div>
 				
 			</section>
-		</article>
+			<section name="inherit" id="inherit">
+				<h1>JS继承</h1>
+				<div class="pre">
+					JavaScript 中的继承机制并不是明确规定的，而是通过模仿实现的。
+					<h3>对象冒充</h3>
+					<p>其原理如下：构造函数使用 this 关键字给所有属性和方法赋值（即采用类声明的构造函数方式）。
+						因为构造函数只是一个函数，所以可使 ClassA 构造函数成为 ClassB 的方法，然后调用它。
+						ClassB 就会收到 ClassA 的构造函数中定义的属性和方法。例如，用下面的方式定义 ClassA 和 ClassB。<b>对象冒充可以实现多重继承。</b>
+					</p>
+<pre class="code">
+function ClassA(sColor) {
+    this.color = sColor;
+    this.sayColor = function () {
+        alert(this.color);
+    };
+}
+
+function ClassB(sColor, sName) {
+    this.newMethod = ClassA;
+    this.newMethod(sColor);
+    delete this.newMethod;
+
+    this.name = sName;
+    this.sayName = function () {
+        alert(this.name);
+    };
+}
+</pre>
+				<h3>call()方法</h3>
+				<p>call和apply是为了动态改变this而出现的，当一个object没有某个方法，但是其他的有，我们可以借助call或apply用其它对象的方法来操作。
+					二者的作用完全一样，只是接受参数的方式不太一样。例如，有一个函数 func1 定义如下：
+				</p>
+    			<pre class="code">var func1 = function(arg1, arg2) {};</pre>
+				<p>就可以通过 func1.call(this, arg1, arg2); 或者 func1.apply(this, [arg1, arg2]); 
+					来调用。其中 this 是你想指定的上下文，他可以任何一个 JavaScript 对象(JavaScript 中一切皆对象)，
+					call需要把参数按顺序传递进去，而 apply 则是把参数放在数组里。
+				</p>
+				<p>call() 方法是与经典的对象冒充方法最相似的方法。它的第一个参数用作 this 的对象。其他参数都直接传递给函数自身。例如：</p>
+<pre class="code">
+function sayColor(sPrefix,sSuffix) {
+    alert(sPrefix + this.color + sSuffix);
+};
+
+var obj = new Object();
+obj.color = "blue";
+
+sayColor.call(obj, "The color is ", "a very nice color indeed.");
+</pre>
+<p>要与继承机制的对象冒充方法一起使用该方法，只需将前三行的赋值、调用和删除代码替换即可：</p>
+<pre class="code">
+function ClassB(sColor, sName) {
+    //this.newMethod = ClassA;
+    //this.newMethod(color);
+    //delete this.newMethod;
+    ClassA.call(this, sColor);
+
+    this.name = sName;
+    this.sayName = function () {
+        alert(this.name);
+    };
+}
+</pre>
+				<h3>原型链</h3>
+				<p></p>
+<pre class="code">
+function ClassA() {
+}
+
+ClassA.prototype.color = "blue";
+ClassA.prototype.sayColor = function () {
+    alert(this.color);
+};
+
+function ClassB() {
+}
+
+ClassB.prototype = new ClassA();
+</pre>
+				</div>
+			</section>
+		</article> 
 		<script src="js/jquery-1.11.2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 	</body>
