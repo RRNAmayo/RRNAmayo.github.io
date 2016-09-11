@@ -58,6 +58,7 @@
 			  <a href="#ajax"    class="list-group-item">AJAX</a>
 			  <a href="#jqueryajax"    class="list-group-item">JQuery AJAX</a>
 			  <a href="#inherit"    class="list-group-item">js继承</a>
+			  <a href="#cross" class="list-group-item">js跨域</a>
 			</div>
 		</aside>
 		<article id="article">
@@ -101,18 +102,30 @@ function myFunction(){
 				<h1>AJAX</h1>
 				<div class="pre">
 					<h3>ALAX实例</h3>
+					<img src="img/ajax.png" />
+					<p>每当 readyState 改变时，就会触发 onreadystatechange 事件。readyState 属性存有 XMLHttpRequest 的状态信息。</p>
+					
 <pre class="code">
-var xmlhttp=new XMLHttpRequest();
-xmlhttp.onreadystatechange=function()
+var xmlhttp=new XMLHttpRequest();      //创建一个异步对象
+xmlhttp.onreadystatechange=function()   //我们规定当服务器响应已做好被处理的准备时所执行的任务。
 {
-	if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	if (xmlhttp.readyState==4 && xmlhttp.status==200)  //当 readyState 等于 4 且状态为 200 时，表示响应已就绪：
 	{
  	  document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
   	}
 }
-xmlhttp.open("POST","test.txt",true);
-xmlhttp.send();
+xmlhttp.open("POST","test.txt",true);   //规定请求的类型、URL 以及是否异步处理请求。
+xmlhttp.send();                         //将请求发送到服务器。
 </pre>
+			<h3>GET与POST的区别</h3>
+			<ol>
+				<li>使用Get请求发送数据量小,Post请求发送数据量大</li>
+				<li>get请求需注意缓存问题,post请求不需担心这个问题</li>
+				<li>post请求必须设置Content-Type值为application/x-form-www-urlencoded否则服务器端收不到参数。
+					<pre class="code"> xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");</pre></li>
+				<li>使用Get请求时,参数在URL中显示,而使用Post方式,则不会显示出来</li>
+				<li>发送请求时,因为get请求的参数都在url里,所以send函数发送的参数为null,而post请求在使用send方法时,却需赋予其参数	</li>
+			</ol>
 			<h3>GET 还是 POST？</h3>
 			<p>与 POST 相比，GET 更简单也更快，并且在大部分情况下都能用。然而，在以下情况中，请使用 POST 请求：</p>
 			<ui>
@@ -283,6 +296,93 @@ function ClassB() {
 }
 
 ClassB.prototype = new ClassA();
+</pre>
+				</div>
+			</section>
+			<section name="cross" id="cross">
+				<h1>JS跨域(JSONP)</h1>
+				<div class="pre">
+					<p>我们经常会在页面上使用ajax请求访问其他服务器的数据,此时,客户端会出现跨域问题。
+						由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口一致）的资源，
+						为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行回调函数，从而解决了跨域的数据请求。
+					</p>
+					<h3>Jsonp原理</h3>
+					<p>首先在客户端注册一个callback, 然后把callback的名字传给服务器。此时，服务器先生成 json 数据。
+然后以 javascript 语法的方式，生成一个function , function 名字就是传递上来的参数 jsonp。最后将 json 数据直接以入参的方式，
+放置到 function 中，这样就生成了一段 js 语法的文档，返回给客户端。客户端浏览器，解析script标签，并执行返回的 javascript文档，
+此时数据作为参数，传入到了客户端预先定义好的 callback 函数里.（动态执行回调函数）</p>
+					<p>服务端PHP代码 （services.php）：</p>
+<pre class="code">
+    &lt;?php  
+      
+    //服务端返回JSON数据  
+    $arr=array('a'=>1,'b'=>2,'c'=>3,'d'=>4,'e'=>5);  
+    $result=json_encode($arr);  
+    //echo $_GET['callback'].'("Hello,World!")';  
+    //echo $_GET['callback']."($result)";  
+    //动态执行回调函数  
+    $callback=$_GET['callback'];  
+    echo $callback."($result)";  
+</pre>
+				<p>这里对返回的数据有个要求,即:服务器返回的数据不能是单纯的如{"Name":"zhangsan"}如果返回的是这个json字符串,
+					我们是没有办法引用这个字符串的.所以,要求返回的值,务必是var json={"Name":"zhangsan"},或json({"Name":"zhangsan"})
+				</p>	
+				<p>HTML代码：</p>
+<pre class="code">
+    &lt;meta content="text/html; charset=utf-8" http-equiv="Content-Type" /&gt;  
+    &lt;script type="text/javascript"&gt;  
+        function jsonpCallback(result) {  
+            //alert(result);  
+            for(var i in result) {  
+                alert(i+":"+result[i]);//循环输出a:1,b:2,etc.  
+            }  
+        }  
+        var JSONP=document.createElement("script");  
+        JSONP.type="text/javascript";  
+        JSONP.src="http://crossdomain.com/services.php?callback=jsonpCallback";  
+        document.getElementsByTagName("head")[0].appendChild(JSONP);  
+    &lt;/script&gt;   
+</pre>
+				<p>或者：</p>
+<pre class="code">
+    &lt;meta content="text/html; charset=utf-8" http-equiv="Content-Type" /&gt;  
+     &lt;script type="text/javascript" &gt;
+        function jsonpCallback(result) {  
+            alert(result.a);  
+            alert(result.b);  
+            alert(result.c);  
+            for(var i in result) {  
+                alert(i+":"+result[i]);//循环输出a:1,b:2,etc.  
+            }  
+        }  
+     &lt;/script&gt;  
+     &lt;script type="text/javascript" src="http://crossdomain.com/services.php?callback=jsonpCallback"&gt;&lt;/script&gt; 
+</pre>
+				<p><b>JavaScript的链接，必须在function的下面。</b></p>
+				<p>如果将上述JS客户端代码用jQuery的方法来实现，也非常简单。</p>
+				<h3>$.getJSON</h3>
+<pre class="code">
+ $.getJSON("http://crossdomain.com/services.php?callback=?",  
+    function(result) {  
+        for(var i in result) {  
+            alert(i+":"+result[i]);//循环输出a:1,b:2,etc.  
+        }  
+    });  
+</pre>
+				<h3>$.ajax</h3>
+<pre class="code">
+ $.ajax({  
+        url:"http://crossdomain.com/services.php",  
+        dataType:'jsonp',  
+        data:'',  
+        jsonp:'callback',  
+        success:function(result) {  
+            for(var i in result) {  
+                alert(i+":"+result[i]);//循环输出a:1,b:2,etc.  
+            }  
+        },  
+        timeout:3000  
+    });  
 </pre>
 				</div>
 			</section>
