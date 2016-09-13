@@ -69,3 +69,6 @@
 	font-size:20px;
 	color:#8F6A33;
 }
+#aside-text p:first-letter{
+	font-size:xx-large;
+}
