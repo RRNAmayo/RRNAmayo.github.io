@@ -159,7 +159,7 @@ $("button").click(function(){
 						<li>"jsonp" - 使用 JSONP 加载一个 JSON 块，将添加一个 "?callback=?" 到 URL 来规定回调</li>
 					</ul>
 					<h3>$.get()方法</h3>
-					<pre class="code">$.get(URL,data,function(data,status,xhr),dataType)</pre>
+					<pre class="code">$.get(URL,data,function(data,status,xhr),dataType)</pre><br/>
 <pre class="code">
 $("button").click(function(){
 	$.get("/try/ajax/demo_test.php",function(data,status){
@@ -169,6 +169,7 @@ $("button").click(function(){
 </pre>
 					<h3>$.post()方法</h3>
 					<pre class="code">$.post(URL,data,function(data,status,xhr),dataType)</pre>
+					<br/>
 <pre class="code">
 $("button").click(function(){
 	$.post("/try/ajax/demo_test_post.php",{
@@ -181,7 +182,7 @@ $("button").click(function(){
 });
 </pre>				
 					<h3>$.getJSON()方法</h3>
-					<pre class="code">$.getJSON(url,data,funciton(data,status,xhr))</pre>
+					<pre class="code">$.getJSON(url,data,funciton(data,status,xhr))</pre><br/>
 <pre class="code">
 $("#btn1").click(function(){
   	$.getJSON("test.json",function(json){
