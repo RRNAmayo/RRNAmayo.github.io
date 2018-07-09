@@ -6,145 +6,73 @@
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/common.css" rel="stylesheet">
-		<link href="css/profile.css" rel="stylesheet">
-		<title>笔记整理</title>
+		<script src="js/jquery-1.11.2.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<title>林方的作品集</title>
 	</head>
 	<body>
-		<nav id="top_nav" class="navbar navbar-inverse">
+		<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
-		    	<a class="navbar-brand" href="#">
-		        <img alt="CMJ" src="img/CMJ_20.png">
-		        <!-- <span>知识结构整理</span> -->
-		      </a>
-		      <a class="navbar-brand" href="#">
-		        <span>笔记整理</span>
-		      </a>
+		      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-leaf"></span> 林方的作品集</a>
 		    </div>
 		
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="nav navbar-nav">
-		        <li><a href="internet.html">计算机网络</a></li>
-		        <li><a href="data_structure.html">数据结构</a></li>
-		        <li><a href="os.html">操作系统</a></li>
-		        <li><a href="db.html">数据库</a></li>
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">web前端 <span class="caret"></span></a>
-		          <ul class="dropdown-menu">
-		            <li><a href="#">HTML</a></li>
-		            <li><a href="#">CSS</a></li>
-		            <li><a href="js.html">JavaScript</a></li>
-		            <li role="separator" class="divider"></li>
-		            <li><a href="#">highcharts</a></li>
-		            <li role="separator" class="divider"></li>
-		            <li><a href="#">codeignitor</a></li>
-		          </ul>
-		        </li>
-		      </ul>
-		      
+		  
+		     
 		      <ul class="nav navbar-nav navbar-right">
-		        <li class="active"><a href="index.html" ><span class="glyphicon glyphicon-user"></span>个人简历</a></li>
-		        <li><a href="paintings.html"><span class="glyphicon glyphicon-pencil"></span>绘画作品</a></li>
-		        <li><a href="contact.html"><span class="glyphicon glyphicon-envelope"></span>与我联系</a></li>
+		        <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>个人简介</a></li>
+		        <li><a href="#"><span class="glyphicon glyphicon-th"></span>作品集</a></li>
+		        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span>联系我</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
-		
-		<aside id="aside">
-			<img id="portrait" class="img-circle" src="img/CMJ_180.png"/>
-			<p style="color:#aaa">“我爱学习，学习使我快乐。”</p>
-			<div id="intro">
-				<h3>蔡梦娇</h3>
-				<br /><br />
-				<h4>求职意向：Web前端开发</h4>
+		<div class="module" id="profile">                                
+			<div class="container">
+				<div class="page-header">
+				 <h1 class="title" align="center">个人简介 <small>Profile</small></h1>
+				</div>
+				<div class="row">
+				  <div class="col-xs-12 col-md-6"><img class="img-responsive" src="img/LFH.png"/></div>
+				  <div class="col-xs-12 col-md-6">
+				  	<h2 class="quote"><big class="quoter">“</big>我是野火，我想燎原。”</h2>
+				  </div>
+				</div>
+				<br /><br /><br />
+				<div class="row">
+				  	   <div class="col-xs-12 col-md-5">
+					  	<div class="alert alert-success" role="alert">
+					  		<div class="page-header"><strong>专业技能</strong> Skill</div>
+					  		<!-- <p><strong>专业技能</strong></p> -->
+					  		<ul>
+								<li>c/c++编程语言</li>
+								<li>HTML，CSS，JS，JQuery等</li>
+								<li>bootstrap，highchart,及CodeIgniter开发框架等</li>
+								<li>PS，AI，flash， SAI等绘图软件</li>
+								<li>英语四、六级，通过日语N2</li>
+								<li>网络工程师资格</li>
+							</ul>
+					  	</div>
+						</div>
+					  <div class="col-xs-12 col-md-7">
+					  	<div class="alert alert-success" role="alert">
+					  		<div class="page-header"><strong>爱好特长</strong> Hobby</div>
+					  		<p>擅长绘画，设计和外语学习。通过英语4、6级考试以及日语N2试验。</p> 
+							<p>担任校研会宣传部副部长，负责海报制作，布置会场，与同学沟通等。</p>
+							<p>绘画作品博客：http://linqiaoxi.lofter.com</p>
+					  	</div>
+						</div>
+			  </div>
 			</div>
-		</aside>
-		<article id="article">
-			<section>
-				<img id="photo" src="img/photo.jpg" />
-				<div id="education" class="panel panel-warning">
-				  <div class="panel-heading">教育背景</div>
-				  <div class="panel-body">
-				  	<table style="width: 100%">
-				  		<tr>
-				  			<td>硕士</td><td>西安电子科技大学</td><td>计算机学院</td><td>教育技术学</td><td>2014.9至今</td>
-				  		</tr>
-				  		<tr>
-				  			<td>本科</td><td>西安电子科技大学</td><td>计算机学院</td><td>计算机科学与技术</td><td>2010.9~2014.6</td>
-				  		</tr>
-				  	</table>
-
-				  </div>
-				</div>
-				
-				<div class="panel panel-warning">
-				  <div class="panel-heading">项目经验</div>
-				  <div class="panel-body">
-				   <!-- <p><strong>项目名称:&nbsp;&nbsp;</strong><span>气象系统信息化建设</span></p>
-				   <p><strong>开发时间:&nbsp;&nbsp;</strong><span>2015.3~至今</span></p>
-				   <p><strong>项目描述:&nbsp;&nbsp;</strong><span>基于mvc设计模式的ci框架的B/S系统，分为数据传输、资料显示、预报制作发布、 
-				   	预报质量评估、业务管理等多个模块。利用highcharts数据可视化技术和ajax异步 更新技术，实现气象信息数据的实时更新和图形化显示，如天气实况显示、
-				   	数值预报资料显示、卫星云图播放、历史资料查询统计等。</span></p> -->
-				   	<table>
-				   		<tr><td class="title">项目名称:</td><td>气象系统信息化建设</td></tr>
-				   		<tr><td class="title">开发时间:</td><td>2015.3~至今</td></tr>
-				   		<tr>
-				   			<td class="title">项目描述:</td>
-				   			<td>气象信息服务系统是基于codeigniter框架的B/S系统，后台使用php开发，分为数据传输、资料显示、预报制作发布、 预报质
-		量评估、业务管理等多个模块。利用highcharts数据可视化技术和ajax异步 更新技术，实
-		现气象信息数据的实时更新和图形化显示，如天气实况显示、数值预报资料显示、卫星云
-		图播放、历史资料查询统计等。</td>
-				   		</tr>
-				   		<tr><td class="title">责任描述:</td><td>主要负责资料显示模块、业务管理模块，以及系统前端设计与开发。</td></tr>
-				   	</table>
-				   	<img style="width: 24%" src="img/projest/qx1.png" />
-				   	<img style="width: 24%" src="img/projest/qx2.png" />
-				   	<img style="width: 24%" src="img/projest/qx3.png" />
-				   	<img style="width: 24%" src="img/projest/qx4.png" />
-				   	
-				  </div>
-				</div>
-				<div id="skill" class="panel panel-warning">
-				  <div class="panel-heading">专业技能</div>
-				  <div class="panel-body">
-					<ul>
-						<li>熟练掌握c/c++编程语言</li>
-						<li>熟练掌握HTML，CSS，JS，JQuery等</li>
-						<li>熟练掌握bootstrap，highchart,及CodeIgniter开发框架等</li>
-						<li>熟悉掌握PS，AI，flash， SAI等绘图软件</li>
-						<li>通过英语四、六级，通过日语N2</li>
-					</ul>
-				  </div>
-				</div>
-				
-				<div id="honors" class="panel panel-warning">
-				  <div class="panel-heading">在校荣誉</div>
-				  <div class="panel-body">
-					<ul>
-						<li>2014~2015  一等学业奖学金</li>
-						<li>2014~2015 腾讯MiniGame创意大赛优秀奖</li>
-						<li>2013~2014 获得“优秀毕业生”称号</li>
-						<li>2011~2012 学校二等奖学金</li>
-						<li>2010~2011 阳光体育三级运动员</li>
-					</ul>
-				  </div>
-				</div>
-				
-				<div id="hobbies" class="panel panel-warning">
-				  <div class="panel-heading">爱好特长</div>
-				  <div class="panel-body">
-					 <p>擅长绘画，设计和外语学习。通过英语4、6级考试以及日语N2试验。</p> 
-					 <p>担任校研会宣传部副部长，负责海报制作，布置会场，与同学沟通等。</p>
-					  <p>绘画作品博客：http://linqiaoxi.lofter.com</p>
-				  </div>
-				</div>
-
-			</section>
-		</article>
-		<script src="js/jquery-1.11.2.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		</div>
+		
+		
+		<div class="modile" id="gellery">
+			<div class="container">
+				d
+			</div>
 	</body>
 </html>
